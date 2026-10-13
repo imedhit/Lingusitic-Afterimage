@@ -4,30 +4,16 @@ Interactive speculative cartography of Bengaluru exploring human-only languages,
 
 ---
 
-## 🚀 How to Publish to GitHub Pages (Zero Commands, Guaranteed to Work)
+## Publish on GitHub Pages
 
-This project has been pre-built with static assets and relative paths so **no manual terminal commands or `npm` installations are ever required**.
+The included GitHub Actions workflow builds and deploys the site whenever you push to `main` or `master`. Visitors do not need to install Node.js or run any commands.
 
-### Simple 3-Step Guide:
+### One-time setup
 
-1. **Extract and Upload**:
-   - Download/export the ZIP file and extract it on your computer.
-   - Go to [GitHub](https://github.com), create a new public repository, and upload all extracted files into it.
+1. Upload or push the project files to a GitHub repository on the `main` or `master` branch.
+2. In that repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
+3. Open the **Actions** tab and wait for the **Deploy to GitHub Pages** workflow to finish.
 
-2. **Enable GitHub Pages**:
-   - In your GitHub repository, click **Settings** (top tab).
-   - In the left sidebar, click **Pages**.
-   - Under **Build and deployment > Source**, keep the default: **Deploy from a branch**.
-   - Under **Branch**, select **main** (or **master**) and leave folder as **/ (root)**.
-   - Click **Save**.
+After deployment, the Pages URL appears in the workflow run and in **Settings → Pages**. For a regular repository, it is usually `https://<owner>.github.io/<repository>/`.
 
-3. **Open Your Link**:
-   - Refresh the page after 30 seconds.
-   - Click your live URL (e.g. `https://<username>.github.io/<repo-name>/`).
-   - The site opens and runs immediately!
-
----
-
-### Alternative Options Supported Out of the Box:
-- **Deploy via `/docs`**: You can also set Branch to **main** and Folder to **/docs**.
-- **Deploy via GitHub Actions**: If you prefer, set Source to **GitHub Actions**; the included workflow will handle everything automatically.
+The workflow rebuilds and republishes the site on each subsequent push to `main` or `master`. You can also start a deployment manually from **Actions → Deploy to GitHub Pages → Run workflow**. The checked-in `assets` and `docs` folders are not needed for this Actions-based deployment; the workflow publishes the generated `dist` site.
