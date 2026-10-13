@@ -12,10 +12,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-C_ji65Qs.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bb2O2rX6.css">
+    <script type="module" crossorigin src="./assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.css">
   </head>
   <body class="bg-[#05070a] text-slate-200 antialiased overflow-hidden select-none">
     <div id="root"></div>
+    <script>
+      (function() {
+        var isStatic = window.location.protocol === 'file:' || 
+                       window.location.hostname.endsWith('github.io') ||
+                       (!window.location.port && !window.location.hostname.includes('run.app'));
+        function loadBundle() {
+          if (window.__bundleLoaded) return;
+          if (document.querySelector('script[src*="assets/index.js"]')) return;
+          window.__bundleLoaded = true;
+          
+          if (!document.querySelector('link[href*="assets/index.css"]')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.crossOrigin = '';
+            link.href = './assets/index.css';
+            document.head.appendChild(link);
+          }
+          
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.crossOrigin = '';
+          s.src = './assets/index.js';
+          document.body.appendChild(s);
+        }
+        
+        if (isStatic) {
+          loadBundle();
+        } else {
+          setTimeout(function() {
+            var root = document.getElementById('root');
+            if (!root || !root.firstElementChild) {
+              loadBundle();
+            }
+          }, 200);
+        }
+      })();
+    </script>
   </body>
 </html>
