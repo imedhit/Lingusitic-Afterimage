@@ -82,7 +82,7 @@ export default function App() {
       {currentPage === 'intro' ? (
         <IntroLandingPage onExplore={() => setCurrentPage('map')} />
       ) : (
-        <div className="relative w-full h-screen h-[100dvh] bg-[#151b24] text-slate-100 overflow-hidden font-sans select-none flex">
+        <div className="relative w-full h-screen h-[100dvh] min-h-0 bg-[#151b24] text-slate-100 overflow-hidden font-sans select-none flex">
       
       {/* Mobile Drawer Toggle Floating Button (< md screens) */}
       <button
@@ -123,7 +123,7 @@ export default function App() {
       </div>
 
       {/* THE MAP & FIXED BOTTOM TIMELINE RIBBON */}
-      <main className="flex-1 h-full min-w-0 relative bg-[#151b24]">
+      <main className="flex-1 h-full min-w-0 min-h-0 relative isolate bg-[#151b24]">
         <BangaloreSpectralMap
           currentYear={currentYear}
           showAreas={layers.showAreas}

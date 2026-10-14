@@ -116,10 +116,10 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
       )}
 
       {/* The Ultra-Thin Bottom Fixed Ribbon (End-to-End Across Screen) */}
-      <div className="w-full bg-[#161d28]/95 hover:bg-[#161d28]/98 border-t border-[#2d3a4d] border-x-0 border-b-0 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)] rounded-none px-3.5 py-2 pointer-events-auto text-slate-200 transition-all flex flex-col gap-1 ring-1 ring-white/5">
+      <div className="w-full bg-[#161d28]/95 hover:bg-[#161d28]/98 border-t border-[#2d3a4d] border-x-0 border-b-0 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)] rounded-none px-2.5 sm:px-3.5 py-1.5 sm:py-2 pointer-events-auto text-slate-200 transition-all flex flex-col gap-1 ring-1 ring-white/5">
         
         {/* Main Ribbon Bar: Controls, Year, Scrubbing Track, Milestones, Stats */}
-        <div className="flex items-center justify-between gap-2.5 sm:gap-4 h-9">
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 sm:flex-nowrap sm:gap-4 sm:h-9">
           
           {/* 1. Play / Pause & Reset */}
           <div className="flex items-center gap-1.5 shrink-0">
@@ -168,7 +168,7 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
           </div>
 
           {/* 3. Sleek Scrubber Track with Glowing Thumb & Milestones */}
-          <div className="flex-1 flex flex-col justify-center px-1 sm:px-2 min-w-[60px] sm:min-w-[100px] h-7">
+          <div className="order-last basis-full flex flex-col justify-center px-1 sm:order-none sm:flex-1 sm:basis-0 sm:px-2 min-w-0 sm:min-w-[100px] h-7">
             <div
               ref={trackRef}
               onPointerDown={handlePointerDown}

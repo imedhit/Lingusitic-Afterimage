@@ -66,7 +66,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   }
 
   return (
-    <aside className="relative z-20 flex-shrink-0 w-[85vw] max-w-[340px] sm:w-88 md:w-96 h-full bg-[#181f2a]/95 border-r border-[#2d3748] flex flex-col text-slate-200 select-none shadow-xl transition-all duration-200 overflow-hidden">
+    <aside className="relative z-20 flex-shrink-0 w-[85vw] max-w-[340px] sm:w-88 md:w-96 h-full bg-[#181f2a]/95 border-r border-[#2d3748] flex flex-col text-slate-200 select-none shadow-xl transition-all duration-200 overflow-hidden max-md:overflow-y-auto">
       {/* Header: Intro button at the TOP LEFT MOST CORNER of the column */}
       <div className="flex items-center justify-between px-3.5 py-3 border-b border-[#2d3748] bg-[#141a23]">
         <div className="flex items-center gap-2.5 min-w-0">
@@ -102,7 +102,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
       </div>
 
       {/* Main Column Body: Non-scrollable, fit edge-to-edge */}
-      <div className="flex-1 flex flex-col justify-between p-2.5 sm:p-3 space-y-2 overflow-hidden">
+      <div className="flex-1 flex flex-col justify-between p-2.5 sm:p-3 space-y-2 overflow-hidden max-md:flex-none max-md:overflow-visible">
 
         {/* 1. LEGEND */}
         <div className="bg-[#1e2634]/90 border border-[#2e3a4d] rounded-none p-2.5 sm:p-3 shadow-inner">

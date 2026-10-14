@@ -471,7 +471,7 @@ export const IntroLandingPage: React.FC<IntroLandingPageProps> = ({ onExplore })
         />
 
         {/* Extended Page Content: Left half (Narrative) + Right half (How to read the Map inside dark/greyish-blue pixelated-edge box) + Centered Explore button */}
-        <div className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 pt-16 sm:pt-20 md:pt-24 pb-4 sm:pb-6 flex flex-col justify-between">
+        <div className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-6 flex flex-col justify-between">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-stretch mt-4 sm:mt-6 md:mt-8">
             {/* Left Half: Narrative (Scaled up by 0.3x / 1.3x) */}
             <div className="flex flex-col justify-between pt-6 sm:pt-7 pb-6 sm:pb-7 text-left text-[#151b24] space-y-4 sm:space-y-5 md:space-y-0">
@@ -556,15 +556,16 @@ export const IntroLandingPage: React.FC<IntroLandingPageProps> = ({ onExplore })
           </div>
 
           {/* Bottom of Extended Page: EXPLORE NOW button (Moved up & enlarged as requested) */}
-          <div className="pt-4 sm:pt-6 pb-2 sm:pb-4 flex items-center justify-center">
+          <div className="sticky bottom-0 z-20 -mx-4 px-4 pt-3 pb-[calc(env(safe-area-inset-bottom,0px)+4rem)] bg-gradient-to-t from-white via-white/95 to-transparent flex items-center justify-center sm:static sm:mx-0 sm:px-0 sm:pt-6 sm:pb-4 sm:bg-none">
             <button
+              type="button"
               onClick={onExplore}
               style={{
                 backgroundColor: '#2b998a', // Map's primary Human-Only Teal
                 color: '#070a0f',
                 boxShadow: '0 6px 24px rgba(43, 153, 138, 0.42)',
               }}
-              className="group w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] py-3.5 sm:py-4.5 md:py-5 px-8 sm:px-12 rounded-none font-sans text-sm sm:text-base md:text-lg font-bold tracking-[0.2em] uppercase transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center justify-center gap-3 sm:gap-4 border border-[#1f7a6e]"
+              className="group relative z-10 w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] min-h-14 py-3.5 sm:py-4.5 md:py-5 px-8 sm:px-12 rounded-none font-sans text-sm sm:text-base md:text-lg font-bold tracking-[0.2em] uppercase transition-all transform hover:-translate-y-0.5 active:translate-y-0 touch-manipulation cursor-pointer flex items-center justify-center gap-3 sm:gap-4 border border-[#1f7a6e]"
               title="Enter Bengaluru Cartography Spectral Map (Page 2)"
             >
               <span>EXPLORE NOW</span>
