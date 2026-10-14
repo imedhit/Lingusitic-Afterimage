@@ -16,5 +16,23 @@
   <body class="bg-[#05070a] text-slate-200 antialiased overflow-hidden select-none">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+        var isStatic = window.location.protocol === 'file:' ||
+                       window.location.hostname.endsWith('github.io') ||
+                       (!window.location.port && !window.location.hostname.includes('run.app'));
+        if (!isStatic || document.querySelector('script[src*="assets/index.js"]')) return;
+
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './assets/index.css';
+        document.head.appendChild(link);
+
+        var script = document.createElement('script');
+        script.type = 'module';
+        script.src = './assets/index.js';
+        document.body.appendChild(script);
+      })();
+    </script>
   </body>
 </html>

@@ -26,7 +26,7 @@
           if (window.__bundleLoaded) return;
           if (document.querySelector('script[src*="assets/index.js"]')) return;
           window.__bundleLoaded = true;
-          
+
           if (!document.querySelector('link[href*="assets/index.css"]')) {
             var link = document.createElement('link');
             link.rel = 'stylesheet';
@@ -34,6 +34,7 @@
             link.href = './assets/index.css';
             document.head.appendChild(link);
           }
+
           
           var s = document.createElement('script');
           s.type = 'module';
